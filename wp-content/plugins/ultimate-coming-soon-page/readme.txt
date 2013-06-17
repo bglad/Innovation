@@ -1,10 +1,10 @@
 === Plugin Name ===
 Contributors: johnnytee
 Donate link: http://seedprod.com/
-Tags: maintenance mode, coming soon, under construction, launch page, launch, maintenance, construction, offline, unavailable, newsletter, i18n 
+Tags: maintenance mode, coming soon, under construction, launch page, launch, maintenance, construction, offline, unavailable, newsletter, coming soon page, landing page
 Requires at least: 3
-Tested up to: 3.4.2
-Stable tag: 1.5.3
+Tested up to: 3.5.1
+Stable tag: 1.9.0
 
 Creates a Coming Soon page or Launch page for your Website while it's under construction and collects emails from your visitors.
 
@@ -31,6 +31,7 @@ Simple and flexible, the Ultimate Coming Soon Page plugin works with any WordPre
 *   Uses HTML5 &amp; CSS3
 *   Translation Ready, i18n Support
 *   Multisite Support
+*	BuddyPress Support
 
 ### Pro Version Features:
 
@@ -80,6 +81,9 @@ Simple and flexible, the Ultimate Coming Soon Page plugin works with any WordPre
 * Russian (ru_RU) by [Oleg Vlasov](http://bestplugins.ru)
 * German (de_DE) by Frederic Ch. Reuter
 * Italian (it_IT) by Luca Barbetti
+* Slovak (sk_SK) by [Branco Radenovich/WebHostingGeeks.com](http://webhostinggeeks.com/blog/)
+* Persian(fa_IR) by [Ali Mirzaei](http://www.alimir.ir)
+* Spanish(es_CO) by [Jaime Echeverry](http://jaime.co/)
 
 == Installation ==
 
@@ -132,6 +136,42 @@ To fix:
 
 
 == Changelog ==
+= 1.9.0 =
+* Added: Support for Theme my Login and other custom login plugins
+
+= 1.8.1 =
+* Fix: Added WP Core Styles
+* Fix: Fix IOS 5.1 Full Screen BG Bug
+
+= 1.8.0 =
+* Feature: updated google fonts
+* Feature: added the ability to use an image on teaser image
+* Feature: added Spanish Translation
+
+= 1.7.3 =
+* Tweak: Made Goole Font urls protocol less
+
+= 1.7.2 =
+* Aded blog description as meta description.
+
+= 1.7.1 =
+* Updated Slovak Translation
+
+= 1.7.0 =
+* Added BuddyPress Compatibility
+* Added Persian Translation
+
+= 1.6.1 =
+* Fixed bug that prevent user from inserting media into the description.
+
+= 1.6.0 =
+* Added Slovak Translation
+* 3.5.0 Compatability
+* Removed double notice
+
+= 1.5.3 =
+* Added Italian Translation
+
 = 1.5.2 =
 * Made footer credit opt-in
 
@@ -244,6 +284,30 @@ To fix:
 * Alpha Launch
 
 == Upgrade Notice ==
+= 1.9.0 =
+* Added: Support for Theme my Login and other custom login plugins
+
+= 1.8.1 =
+* Fix: Added WP Core Styles
+* Fix: Fix IOS 5.1 Full Screen BG Bug
+
+= 1.7.1 =
+* Updated Slovak Translation
+
+= 1.7.0 =
+* Added BuddyPress Compatibility
+
+= 1.6.1 =
+* Fixed bug that prevent user from inserting media into the description.
+
+= 1.6.0 =
+* Added Slovak Translation
+* 3.5.0 Compatability
+* Removed double notice
+
+= 1.5.3 =
+* Added Italian Translation
+
 = 1.5.2 =
 * Made footer credit opt-in
 

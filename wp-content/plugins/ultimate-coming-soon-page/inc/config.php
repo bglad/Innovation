@@ -20,7 +20,11 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
             parent::__construct();
             add_action( 'wp_ajax_seedprod_comingsoon_refesh_list', array(&$this,'refresh_list'));
             if((isset($seedprod_comingsoon_options['comingsoon_enabled']) && in_array('1',$seedprod_comingsoon_options['comingsoon_enabled'])) || (isset($_GET['cs_preview']) && $_GET['cs_preview'] == 'true')){
-                add_action('template_redirect', array(&$this,'render_comingsoon_page'),12);
+                if(function_exists('bp_is_active')){
+                    add_action('template_redirect', array(&$this,'render_comingsoon_page'),9);
+                }else{
+                    add_action('template_redirect', array(&$this,'render_comingsoon_page'));
+                }
                 add_action( 'admin_bar_menu',array( &$this, 'admin_bar_menu' ), 1000 );
             }
             add_action( 'wp_ajax_seedprod_mailinglist_callback', array(&$this,'ajax_mailinglist_callback') );
@@ -55,6 +59,10 @@ if ( ! class_exists( 'SeedProd_Ultimate_Coming_Soon_Page' ) ) {
          * Display the coming soon page
          */
         function render_comingsoon_page() {
+                // Return if a login page
+                if(preg_match("/login/i",$_SERVER['REQUEST_URI']) > 0){
+                    return false;
+                }
 
 	            if(!is_admin()){
 	                if(!is_feed()){

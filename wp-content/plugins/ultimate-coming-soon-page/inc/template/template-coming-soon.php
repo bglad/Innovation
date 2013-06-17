@@ -12,17 +12,15 @@ global $seedprod_comingsoon;
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title><?php
     bloginfo( 'name' );
-    $site_description = get_bloginfo( 'description', 'display' );
-    if ( $site_description  )
-      echo " | $site_description";
+    $site_description = get_bloginfo( 'description' );
     ?></title>
-  <meta name="description" content="">
+  <meta name="description" content="<?php echo esc_attr($site_description);?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <?php if(substr($sc_jdt['comingsoon_body_font'], 0, 1) != '_'): ?>
-  <link href='http://fonts.googleapis.com/css?family=<?php echo $sc_jdt['comingsoon_body_font'] ?>&v1' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=<?php echo $sc_jdt['comingsoon_body_font'] ?>&v1' rel='stylesheet' type='text/css'>
   <?php endif;?>
   <?php if(substr($sc_jdt['comingsoon_headline_font'], 0, 1) != '_'): ?>
-  <link href='http://fonts.googleapis.com/css?family=<?php echo $sc_jdt['comingsoon_headline_font'] ?>&v1' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=<?php echo $sc_jdt['comingsoon_headline_font'] ?>&v1' rel='stylesheet' type='text/css'>
   <?php endif;?>
   <?php  do_action( 'sc_head'); ?>
 
@@ -77,7 +75,7 @@ global $seedprod_comingsoon;
     <div id="coming-soon-main" role="main">
         <div id="coming-soon">
             <?php if(!empty($sc_jdt['comingsoon_image'])): ?>
-            <img id="teaser-image" src="<?php echo $sc_jdt['comingsoon_image'] ?>" alt="Teaser"/>
+            <img id="teaser-image" src="<?php echo $sc_jdt['comingsoon_image'] ?>" alt="Teaser" usemap="#teaser-image" />
             <?php endif; ?>
             <h1 id="teaser-headline"><?php echo $sc_jdt['comingsoon_headline'] ?></h1>
             <p id="teaser-description"><?php echo $sc_jdt['comingsoon_description'] ?></p>
@@ -127,6 +125,7 @@ global $seedprod_comingsoon;
     <?php
     if(!empty($sc_jdt['comingsoon_background_strech'])):
     ?>
+    $('#supersized').css('display','fixed');
     $.supersized({
       slides:[ {image : '<?php echo $sc_jdt['comingsoon_custom_bg_image']; ?>'} ]
     });
