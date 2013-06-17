@@ -2,10 +2,20 @@
 /* Template Name: News Template */ 
 ?> 
 <?php get_header(); ?>
+<?php if(post_password_required()){ echo '<div class="password-protected-page">'.get_the_password_form().'</div>'; }else{ ?>
 <div class="page-template-wrapper">
-<header class="page-header">
-	<div class="page-title"><?php if (get_post_meta($post->ID, 'Title', true)) { ?><?php echo get_post_meta($post->ID, 'Title', true); ?><?php }else{ ?><?php the_title(); ?><?php } ?></div><div style="clear:both;"></div>
-</header>
+	<header class="page-header">
+		<div class="page-title">
+		<?php if(($page_title = get_post_meta($post->ID, 'flow_post_title', true)) || ($page_title = get_post_meta($post->ID, 'Title', true))){ ?>
+			<?php echo $page_title; ?>
+		<?php }else{ ?>
+			<?php the_title(); ?>
+		<?php } ?>
+		</div>
+		<?php if(($page_description = get_post_meta($post->ID, 'flow_post_description', true)) || ($page_description = get_post_meta($post->ID, 'Description', true))){ ?>
+			<div class="page-description"><?php echo $page_description; ?></div>
+		<?php } ?>
+	</header>
 <div class="scrollbar-arrowleft scrollbar-arrowleft-inactive" style="display:none;"></div>
 <div class="news-container-outer">
 		<div class="news-container">
@@ -35,23 +45,20 @@ if ($category) {
 		<div class="excerpt excerpt-blog" style="width: 350px; float:left; margin-right: 80px; display: inline-block;">
 			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<div class="news-date"><?php print(date(__('F d, Y', 'flowthemes'), strtotime($wp_query->post->post_date))); ?></div>
-				<h1 class="news-title"><?php the_title(); ?></h1>
-				<div class="news-content">
-				<?php the_excerpt(); ?>
-				</div>	
+				<h1 class="news-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
+				<div class="news-content"><?php the_excerpt(); ?></div>	
 			</div>	
 		</div>
 
     <?php endwhile; ?>
   <?php else : ?>
-		<h2 class="center"><?php _e('Not Found', 'flowthemes'); ?></h2>
-		<p class="center"><?php _e('Sorry, but you are looking for something that isn\'t here.', 'flowthemes'); ?></p>
-		<?php get_search_form(); ?>
 	<?php endif; 
 	$wp_query = $temp;  //reset back to original query
+	wp_reset_postdata();
 }  // if ($category)
 ?>
 </div>
 </div>
 <div class="scrollbar-arrowright" style="display:none;"></div></div>
+<?php } ?>
 <?php get_footer(); ?>

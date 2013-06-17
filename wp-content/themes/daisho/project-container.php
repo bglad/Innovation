@@ -1,7 +1,7 @@
-<?php if(is_singular('portfolio')){ ?>
+<?php if(false && is_singular('portfolio')){ ?>
 	<div class="project-navigation project-navigation-visible">
-		<div class="portfolio-arrowleft">&lt;</div>
-		<div class="portfolio-arrowright">&gt;</div>
+		<div class="portfolio-arrowleft portfolio-arrowleft-visible">&lt;</div>
+		<div class="portfolio-arrowright portfolio-arrowright-visible">&gt;</div>
 	</div>
 	<div class="portfolio_box portfolio_box-visible">
 		<div class="content-projectc">
@@ -63,10 +63,8 @@
 					<span class="sharing-icons-tooltip" data-tooltip="Google+"></span>
 				</a>
 			</div>
-			<div style="clear:both;"></div>
-			<h1 class="project-title"><?php if(get_post_meta($post->ID, 'Title', true)){ echo get_post_meta($post->ID, 'Title', true); }else{ the_title(); } ?></h1>
-			<div style="clear:both;"></div>
-			<h4 class="project-description"><?php if(get_post_meta($post->ID, 'Description', true)){ echo do_shortcode(get_post_meta($post->ID, 'Description', true)); } ?></h4>
+			<h2 class="project-title"><?php if(get_post_meta($post->ID, 'Title', true)){ echo get_post_meta($post->ID, 'Title', true); }else{ the_title(); } ?></h2>
+			<div class="project-description"><?php if($description = get_post_meta($post->ID, 'Description', true)){ echo do_shortcode($description); } ?></div>
 			<div class="project-slides"><?php $this_page = get_page($post->ID); echo do_shortcode($this_page->post_content); ?></div>
 			<div class="clear"></div>
 		</div>
@@ -74,9 +72,13 @@
 	<div class="project-coverslide project-coverslide-visible"></div>
 <?php }else{ ?>
 	<div class="project-navigation">
-		<div class="portfolio-arrowleft">&lt;</div>
-		<div class="portfolio-arrowright">&gt;</div>
+		<div class="portfolio-arrowleft portfolio-arrowleft-normal portfolio-arrowleft-visible">&lt;</div>
+		<div class="portfolio-arrowright portfolio-arrowright-normal portfolio-arrowright-visible">&gt;</div>
 	</div>
+	
+	<div class="portfolio-arrowleft portfolio-arrowleft-mobile portfolio-arrowleft-visible">&lt;</div>
+	<div class="portfolio-arrowright portfolio-arrowright-mobile portfolio-arrowright-visible">&gt;</div>
+	
 	<div class="portfolio_box">
 		<div class="content-projectc">
 			<div class="project-meta">
@@ -115,13 +117,11 @@
 					<span class="sharing-icons-tooltip" data-tooltip="Google+"></span>
 				</a>
 			</div>
-			<div style="clear:both;"></div>
-			<h1 class="project-title"></h1>
-			<div style="clear:both;"></div>
-			<h4 class="project-description"></h4>
+			<h2 class="project-title"></h2>
+			<div class="project-description"></div>
 			<div class="project-slides"></div>
 			<div class="clear"></div>
 		</div>
 	</div>
-	<div class="project-coverslide"></div>
+	<div class="project-coverslide <?php if(is_singular('portfolio')){ echo 'project-coverslide-visible'; } ?>"></div>
 <?php } ?>

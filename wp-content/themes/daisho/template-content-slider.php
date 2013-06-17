@@ -2,17 +2,18 @@
 /* Template Name: Content Slider Page Template */ 
 ?> 
 <?php get_header(); ?>
+<?php if(post_password_required()){ echo '<div class="password-protected-page">'.get_the_password_form().'</div>'; }else{ ?>
 <div class="page-template-wrapper">
 	<header class="page-header">
 		<div class="page-title">
-		<?php if (get_post_meta($post->ID, 'Title', true)) { ?>
-			<?php echo get_post_meta($post->ID, 'Title', true); ?>
+		<?php if(($page_title = get_post_meta($post->ID, 'flow_post_title', true)) || ($page_title = get_post_meta($post->ID, 'Title', true))){ ?>
+			<?php echo $page_title; ?>
 		<?php }else{ ?>
 			<?php the_title(); ?>
 		<?php } ?>
 		</div>
-		<?php if (get_post_meta($post->ID, 'Description', true)) { ?>
-			<div class="page-description"><?php echo get_post_meta($post->ID, 'Description', true); ?></div>
+		<?php if(($page_description = get_post_meta($post->ID, 'flow_post_description', true)) || ($page_description = get_post_meta($post->ID, 'Description', true))){ ?>
+			<div class="page-description"><?php echo $page_description; ?></div>
 		<?php } ?>
 	</header>
 	<?php if($ipad){ ?>
@@ -33,4 +34,5 @@
 	<div class="scrollbar-arrowleft scrollbar-arrowleft-inactive" style="display:none;"></div>
 	<div class="scrollbar-arrowright" style="display:none;"></div>
 </div> <!-- /#content -->
+<?php } ?>
 <?php get_footer(); ?>

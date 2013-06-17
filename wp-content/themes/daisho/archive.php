@@ -1,62 +1,73 @@
 <?php get_header(); ?>
-<div id="content">
-	<h1 class="blog-title"><?php wp_title(' ', true, ''); ?>
-	<?php
-	/* if(is_day()){
-		printf(__( 'Daily Archives: %s', 'flowthemes'), '<span>'.get_the_date().'</span>');
-	}else if(is_month()){
-		printf(__( 'Monthly Archives: %s', 'flowthemes'), '<span>'.get_the_date(_x('F Y', 'monthly archives date format', 'flowthemes')).'</span>');
-	}else if(is_year()){
-		printf(__( 'Yearly Archives: %s', 'flowthemes'), '<span>'.get_the_date(_x('Y', 'yearly archives date format', 'flowthemes')).'</span>');
-	}else{
-		wp_title(' ', true, '');
-	} */
-	?>
-	</h1>
-	
-	<?php
-	if(is_category()){
-		$category_description = category_description();
-		if(!empty( $category_description)){
-			echo '<div class="blog-description">' . $category_description . '</div>';
-		}
-	}else if(is_tag()){
-		$tag_description = tag_description();
-		if(!empty($tag_description)){
-			echo '<div class="blog-description">' . $tag_description . '</div>';
-		}
-	} ?>
-		
-	<div class="extended-blog-container">	
+<div class="archive-template-wrapper">
 
-<?php if(have_posts()){ ?>
- <?php while(have_posts()) : the_post(); ?>  
-		<div class="extended-blog-entry clearfix">
-			<div class="extended-blog-title"><h1><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1><div class="extended-blog-comments <?php if(get_comments_number() == '0'){ echo 'extended-blog-comments-zero'; } ?>"><div class="extended-blog-comment-icon">c</div><div class="extended-blog-comments-value"><?php comments_popup_link('0', '1', '%'); ?></div></div><small>
-			<?php /* echo date_i18n(get_option('date_format'), strtotime($post->post_date)); */ ?>
-			<?php the_time(__('F jS, Y', 'flowthemes')); ?>
-			</small><div class="extended-blog-tags"><?php the_tags(' ', ' '); ?></div></div>
-			
-			<div class="extended-blog-content clearfix">
-			<?php if (get_post_meta($post->ID, 'blog-full-image', true)){ ?>
-			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-				<img class="extended-blog-image" src="<?php echo get_post_meta($post->ID, 'blog-full-image', true); ?>" alt="<?php the_title(); ?>" /></a>
-			<?php } ?>
-			<?php echo summarise_excerpt(get_the_excerpt(), 55); ?></div>
+	<?php /* Page Header */ ?>
+	<header class="page-header blog-header">
+		<h1 class="page-title blog-title"><?php wp_title(' ', true, ''); ?>
+		<?php
+		/* if(is_day()){
+			printf(__( 'Daily Archives: %s', 'flowthemes'), '<span>'.get_the_date().'</span>');
+		}else if(is_month()){
+			printf(__( 'Monthly Archives: %s', 'flowthemes'), '<span>'.get_the_date(_x('F Y', 'monthly archives date format', 'flowthemes')).'</span>');
+		}else if(is_year()){
+			printf(__( 'Yearly Archives: %s', 'flowthemes'), '<span>'.get_the_date(_x('Y', 'yearly archives date format', 'flowthemes')).'</span>');
+		}else{
+			wp_title(' ', true, '');
+		} */
+		?>
+		</h1>
+		<?php
+		if(is_category()){
+			$category_description = category_description();
+			if(!empty($category_description)){
+				echo '<div class="page-description blog-description">' . $category_description . '</div>';
+			}
+		}else if(is_tag()){
+			$tag_description = tag_description();
+			if(!empty($tag_description)){
+				echo '<div class="page-description blog-description">' . $tag_description . '</div>';
+			}
+		} ?>
+	</header>
+	<div class="blog-container">	
+<?php 
+	// Do we show entry author?
+	$blog_author = false;
+	$blog_author = get_option('blog_show_author');
 
+	if(have_posts()){
+		while(have_posts()){ the_post(); ?>  
+		<div class="blog-entry clearfix <?php echo $post_class; ?>">
+			<header class="blog-entry-header">
+				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="blog-entry-title"><?php the_title(); ?></a>
+				<?php if($page_layout != 2){ ?>
+				<div class="blog-comments-wrapper <?php if(get_comments_number() == '0'){ echo 'blog-comments-wrapper-zero'; } ?>">
+					<div class="blog-comments-icon">
+						<svg version="1.1" class="blog-comments-icon-shape" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="25px" height="24.083px" viewBox="0 0 25 24.083" enable-background="new 0 0 25 24.083" xml:space="preserve"><g><path fill-rule="evenodd" clip-rule="evenodd" fill="none" d="M8.013,17H4c-2.072,0-3-1.507-3-3V4c0-1.822,1.178-3,3-3h17 c1.767,0,3,1.233,3,3v10c0,1.475-1.122,3-3,3h-8.265l-4.737,4.681L8.013,17z"/></g></svg>
+						<?php if(comments_open()){ ?>
+							<?php if(get_comments_number() > 999){ $comments_number = __('1k+', 'flowthemes'); }else{ $comments_number = '%'; } ?>
+							<div class="blog-comments-value"><?php comments_popup_link('0', '1', $comments_number, '', ''); ?></div>
+						<?php } ?>
+					</div>
+				</div>
+				<?php } ?>
+				<?php if($blog_author){ ?>
+					<div class="blog-entry-author"><?php printf(__('Written by <a href="%1$s" title="Posts by %2$s" rel="author">%2$s</a>', 'flowthemes'), get_author_posts_url(get_the_author_meta('ID')), get_the_author()); ?></div>
+				<?php } ?>
+				<div class="blog-entry-date"><?php the_time(__('F jS, Y', 'flowthemes')); ?></div>
+				<?php /* <div class="blog-entry-date"><?php echo date_i18n(get_option('date_format'), strtotime($wp_query->post->post_date)); ?></div> */ ?>
+				<?php if(has_tag()){ ?>
+					<div class="blog-entry-tags"><?php the_tags(' ', ' '); ?></div>
+				<?php } ?>
+			</header>	
+			<div class="blog-entry-content clearfix">
+				<?php get_template_part('thumbnail'); ?>
+				<?php echo summarise_excerpt(get_the_excerpt(), 55); ?>
+			</div>
 		</div>
-    <?php endwhile; ?>
-	</div> <!-- /.extended-blog-container -->
-		<?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); }else{ ?>
-		<div class="navigation">
-			<div class="alignright older_entries"><?php next_posts_link('<div class="older_entries_text">'.__('Older Entries ', 'flowthemes').'</div><div class="older_entries_icon">></div>'); ?></div>
-			<div class="alignleft newer_entries"><?php previous_posts_link('<div class="newer_entries_icon"><</div><div class="newer_entries_text">'.__(' Newer Entries', 'flowthemes').'</div>'); ?></div>
-		</div>
-		<?php } ?>
-  <?php }else{ ?>
-		<h2 class="center"><?php _e('Not Found', 'flowthemes'); ?></h2>
-		<p class="center"><?php _e('Sorry, but you are looking for something that isn\'t here.', 'flowthemes'); ?></p>
-		<?php get_search_form(); ?>
 	<?php } ?>
+	</div> <!-- /.blog-container -->
+	<?php get_template_part('nav'); ?>
+	<?php }else{ /* no posts... */ } ?>
 </div> <!-- /#content -->
 <?php get_footer(); ?>
