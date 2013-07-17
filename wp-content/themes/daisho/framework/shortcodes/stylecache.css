@@ -58,7 +58,7 @@
 	-o-transition: all 0.2s linear;
 	-webkit-transition: all 0.2s linear;
 }
-.news-image:hover + .news-title { color: #461469; }
+.news-image:hover + .news-title { color: #00a4a7; }
 /* Start: Recommended Isotope styles */
 
 /**** Isotope Filtering ****/
@@ -884,8 +884,8 @@ code .nd { color: #9FAD7E; } /* CSS pseudo selector */
 #options li { margin-left: 5px; }
 #options li:first-child { margin-left: 0px; }
 #options li a { display: block; padding: 0.17em 0.9em; color: #202020; font-weight: normal; font-size: 14px; text-transform: uppercase; font-family: "Dosis", Arial, sans-serif; }
-#options li a:hover { text-decoration: none; background-color: #461469; color: #ffffff; border-radius: 12px; }
-#options li a.selected { background-color: #461469; color: #ffffff; border-radius: 12px; font-weight: 700; }
+#options li a:hover { text-decoration: none; background-color: #00a4a7; color: #ffffff; border-radius: 12px; }
+#options li a.selected { background-color: #00a4a7; color: #ffffff; border-radius: 12px; font-weight: 700; }
 #options #toggle-sizes a { background: url(daisho-isotype/change-view.png) no-repeat top left transparent; text-indent: -9999px; width: 28px; height: 18px; padding: 0!important; float: left; margin-right: 20px; margin-top: 3px; }
 #options #toggle-sizes a:hover { background: url(daisho-isotype/change-view.png) no-repeat top right transparent; border-radius: 0px; }
 #options #toggle-sizes a:first-child { background: url(daisho-isotype/change-view.png) no-repeat bottom left transparent; text-indent: -9999px; width: 28px; height: 18px; padding: 0!important; }
