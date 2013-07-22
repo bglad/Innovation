@@ -98,13 +98,6 @@ figure.alignright blockquote.quote-style-2, figure.alignleft blockquote.quote-st
 	margin: 0 auto;
 	overflow: hidden;
 }
-<<<<<<< HEAD:wp-content/themes/daisho/modules/stylecache.css
-=======
-.news-image:hover + .news-title { color: #00a4a7; }
-/* Start: Recommended Isotope styles */
-
-/**** Isotope Filtering ****/
->>>>>>> master:wp-content/themes/daisho/framework/shortcodes/stylecache.css
 
 /* Grid >> Global
 ----------------------------------------------------------------------------------------------------*/
@@ -1598,7 +1591,6 @@ body {
   margin: 0 auto;
 }
 
-<<<<<<< HEAD:wp-content/themes/daisho/modules/stylecache.css
 .element {
   width: 110px;
   height: 110px;
@@ -1611,48 +1603,6 @@ body {
   -webkit-border-top-right-radius: 1.2em;
       -moz-border-radius-topright: 1.2em;
           border-top-right-radius: 1.2em;
-=======
-#filters { float: right; }
-#options li { margin-left: 5px; }
-#options li:first-child { margin-left: 0px; }
-#options li a { display: block; padding: 0.17em 0.9em; color: #202020; font-weight: normal; font-size: 14px; text-transform: uppercase; font-family: "Dosis", Arial, sans-serif; }
-#options li a:hover { text-decoration: none; background-color: #00a4a7; color: #ffffff; border-radius: 12px; }
-#options li a.selected { background-color: #00a4a7; color: #ffffff; border-radius: 12px; font-weight: 700; }
-#options #toggle-sizes a { background: url(daisho-isotype/change-view.png) no-repeat top left transparent; text-indent: -9999px; width: 28px; height: 18px; padding: 0!important; float: left; margin-right: 20px; margin-top: 3px; }
-#options #toggle-sizes a:hover { background: url(daisho-isotype/change-view.png) no-repeat top right transparent; border-radius: 0px; }
-#options #toggle-sizes a:first-child { background: url(daisho-isotype/change-view.png) no-repeat bottom left transparent; text-indent: -9999px; width: 28px; height: 18px; padding: 0!important; }
-#options #toggle-sizes a:first-child:hover { background: url(daisho-isotype/change-view.png) no-repeat bottom right transparent; border-radius: 0px; }
-#options #toggle-sizes a.toggle-selected { background-position: top right; }
-#options #toggle-sizes a:first-child.toggle-selected { background-position: bottom right; }
-#options #shuffle { margin-left: 0; }
-#options #shuffle a { background: url(daisho-isotype/shuffle-view.png) no-repeat left top transparent; text-indent: -9999px; width: 22px; height: 18px; padding: 0!important; float: left; margin-right: 20px; margin-top: 3px; }
-#options #shuffle a:hover { background: url(daisho-isotype/shuffle-view.png) no-repeat left bottom transparent; border-radius: 0px; }
-#etc { margin-top: 4px; }
-
-.element { height: 150px; margin: 2.5px; width: 220px; border-radius: 0px; }
-.variable-sizes .element.width2 { width: 445px; }
-.variable-sizes .element.height2 { height: 305px; }
-.variable-sizes .element.width3 { width: 670px; font-size: 2em; }
-.element.large, .variable-sizes .element.large, .variable-sizes .element.large.width2.height2 { height: 305px; width: 670px; }
-.element img { z-index: -1; width: 100%; }
-.element .symbol { font-weight: 700; font-size: 28px; left: 0.45em; top: 0.4em; width: 90%; z-index: 2; }
-.element.large .symbol { font-size: 2.4em; font-weight: 300; left: 0.2em; top: 0.15em; }
-.element.width2.height2 .symbol { font-size: 2.4em; font-weight: 400; left: 0.3em; top: 0.25em; }
-.element.width3.height2 .symbol { font-size: 2.4em; font-weight: 400; left: 0.3em; top: 0.25em; }
-.variable-sizes .height2.vertical-thumbnail img { width: auto; height: 100%; }
-
-.element .name { font-family: "Open Sans", Arial, sans-serif; font-size: 13px; left: 1.3em; bottom: 2.45em; font-weight: 400; }
-.element .categories { left: 1.4em; bottom: 1.35em; font-family: "Dosis", Arial, sans-serif; font-size: 12px; font-weight: 400; text-transform: uppercase; }
-.element .categories, .element .name {
-	z-index: 2;
-	color: #ffffff;
-	line-height: 100%;
-	max-width: 100%;
-    word-wrap: break-word;
-	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-		    box-sizing: border-box; 
->>>>>>> master:wp-content/themes/daisho/framework/shortcodes/stylecache.css
 }
 
 .element.alkali          { background: #F00; background: hsl(   0, 100%, 50%); }
