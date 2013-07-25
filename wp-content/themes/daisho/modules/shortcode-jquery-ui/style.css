@@ -25,36 +25,36 @@
 .toggle-default .toggle_active { }
 .toggle-default .toggle_content { }
 .toggle-default .toggle_title:before { color: #c7c7c7; content: "\f054"; font-size: 19px; left: 0; position: absolute; top: 3px; }
-.toggle-default .toggle_active:before { content: "\f078"; color: #00a4a7; }
-.toggle-default:hover .toggle_title:before { color: #00a4a7; }
+.toggle-default .toggle_active:before { content: "\f078"; color: #ffcc00; }
+.toggle-default:hover .toggle_title:before { color: #ffcc00; }
 
 .faqtoggles .toggle_title { }
 .faqtoggles .toggle_active { }
 .faqtoggles .toggle_content { }
 .faqtoggles .toggle_title:before { color: #c7c7c7; content: "\f059"; font-size: 18px; left: 0; position: absolute; top: 1px; }
-.faqtoggles .toggle_active:before { color: #00a4a7; }
-.faqtoggles:hover .toggle_title:before { color: #00a4a7; }
+.faqtoggles .toggle_active:before { color: #ffcc00; }
+.faqtoggles:hover .toggle_title:before { color: #ffcc00; }
 
 .toggle-plus .toggle_title { }
 .toggle-plus .toggle_active { }
 .toggle-plus .toggle_content { }
 .toggle-plus .toggle_title:before { color: #c7c7c7; content: "\f067"; font-size: 18px; left: 0; position: absolute; top: 3px; }
-.toggle-plus .toggle_active:before { content: "\f068"; color: #00a4a7; }
-.toggle-plus:hover .toggle_title:before { color: #00a4a7; }
+.toggle-plus .toggle_active:before { content: "\f068"; color: #ffcc00; }
+.toggle-plus:hover .toggle_title:before { color: #ffcc00; }
 
 .toggle-plus-fill .toggle_title { }
 .toggle-plus-fill .toggle_active { }
 .toggle-plus-fill .toggle_content { }
 .toggle-plus-fill .toggle_title:before { color: #c7c7c7; content: "\f055"; font-size: 18px; left: 0; position: absolute; top: 3px; }
-.toggle-plus-fill .toggle_active:before { content: "\f056"; color: #00a4a7; }
-.toggle-plus-fill:hover .toggle_title:before { color: #00a4a7; }
+.toggle-plus-fill .toggle_active:before { content: "\f056"; color: #ffcc00; }
+.toggle-plus-fill:hover .toggle_title:before { color: #ffcc00; }
 
 .toggle-arrow-fill .toggle_title { }
 .toggle-arrow-fill .toggle_active { }
 .toggle-arrow-fill .toggle_content { }
 .toggle-arrow-fill .toggle_title:before { color: #c7c7c7; content: "\f0da"; font-size: 18px; left: 0; position: absolute; top: 3px; }
-.toggle-arrow-fill .toggle_active:before { content: "\f0d7"; color: #00a4a7; }
-.toggle-arrow-fill:hover .toggle_title:before { color: #00a4a7; }
+.toggle-arrow-fill .toggle_active:before { content: "\f0d7"; color: #ffcc00; }
+.toggle-arrow-fill:hover .toggle_title:before { color: #ffcc00; }
 
 .toggle-filled .toggle { width: 100%; }
 .toggle-filled .toggle_title {
